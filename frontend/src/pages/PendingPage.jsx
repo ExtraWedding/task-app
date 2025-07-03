@@ -35,7 +35,7 @@ const PendingPage = () => {
             Task Progress
           </h1>
           <p className=" text-sm text-gray-600 mt-1 ml-7">
-            {sortedPendingTasks.length} task {sortedPendingTasks.length !== 1 && 's'}{' '}
+            {sortedPendingTasks.length} task{sortedPendingTasks.length !== 1 && 's'}{' '}
             needing your attention
           </p>
         </div>

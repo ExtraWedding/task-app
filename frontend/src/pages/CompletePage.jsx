@@ -43,8 +43,8 @@ const CompletePage = () => {
             <span className=" truncate"> Complated Tasks</span>
           </h1>
           <p className={CT_CLASSES.subtitle}>
-            {sortedCompletedTasks.length} task {sortedCompletedTasks.length !== 1 && 's'}{' '}
-            Task mark as completed
+            {sortedCompletedTasks.length} task{sortedCompletedTasks.length !== 1 && 's'}{' '}
+            marked as completed
           </p>
         </div>
 
