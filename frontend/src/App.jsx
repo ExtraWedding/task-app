@@ -261,10 +261,10 @@ const App = () => {
       }}>
         <Routes>
           <Route path='/login' element={<div>
-            <Login onSubmit={heandleAuthSubmit} onSwitchMode={() => navigate('/signup')} />
+            <Login onSubmit={heandleAuthSubmit} onSwitchMode={() => navigate('/daftarbolehenakaja')} />
           </div>} />
 
-          <Route path='/signup' element={<div>
+          <Route path='/daftarbolehenakaja' element={<div>
             <SignUp onSubmit={heandleAuthSubmit} onSwitchMode={() => navigate('/login')} />
           </div>} />
 

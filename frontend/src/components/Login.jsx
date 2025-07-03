@@ -216,7 +216,7 @@ const Login = ({ onSubmit, onSwitchMode}) => {
                 className="font-medium text-purple-600 hover:text-purple-700 hover:underline transition-colors"
                 onClick={handleSwitchMode}
               >
-                Sign Up
+               
               </button>
             </p>
           </div>
