@@ -22,7 +22,7 @@ app.use("/api/user", userRouter);
 app.use("/api/tasks",taskRouter)
 
 app.get('/', (req, res) => {
-  res.send('API WORKING');
+  res.send('API WORKING: MADE BY WISNU IBNU MUTTAQIEM');
 })
 
 app.listen(port, () => {
