@@ -46,7 +46,8 @@ cron.schedule("0 6 * * *", async () => {
           to: task.owner.email,
           subject: `🔔 Reminder ${labels[daysAhead]}: "${task.title}"`,
           text: `🌼 Hai ${task.owner.name} Selamat Pagi,
-Jangan lupa ya, kamu ada tugas: 📌 *${task.title}*
+          
+Jangan lupa ya, kamu ada tugas: 📌 ${task.title}
 yang akan jatuh tempo pada 🗓️ ${task.dueDate.toLocaleDateString()}.
 Yuk, semangat selesaikan tugas ini supaya kamu bisa lebih tenang dan punya waktu untuk hal-hal yang kamu sukai 💖
 Kalau butuh istirahat, jangan lupa rehat sejenak ya, tapi jangan lupa kembali mengerjakan tugasmu 🌻
