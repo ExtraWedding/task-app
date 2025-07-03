@@ -144,7 +144,7 @@ const Sidebar = ({ user, tasks }) => {
             className={SIDEBAR_CLASSES.mobileDrawer}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex justify-between items-center mb-4 border-b pb-2 pt-20">
+            <div className="flex justify-between items-center mb-4 border-b pb-2 pt-5">
               <h2 className="text-lg font-bold text-purple-600">Menu</h2>
               <button
                 className="text-gray-700 hover:text-purple-600"

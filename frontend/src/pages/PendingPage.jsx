@@ -47,13 +47,13 @@ const PendingPage = () => {
            </div>
 
            <select 
-  value={sortBy} 
-  onChange={(e) => setSortBy(e.target.value)}
-  className={layoutClasses.select}           
->
-  <option value="newest">Newest First</option>
-  <option value="oldest">Oldest First</option>
-  <option value="priority">By Priority</option>
+            value={sortBy} 
+            onChange={(e) => setSortBy(e.target.value)}
+            className={layoutClasses.select}           
+          >
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="priority">By Priority</option>
             </select>
 
             <div className={layoutClasses.tabWrapper}>

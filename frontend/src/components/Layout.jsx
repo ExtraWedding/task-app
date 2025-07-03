@@ -123,7 +123,7 @@ const Layout = ({ onLogout, user }) => {
     <div className='min-h-screen bg-gray-50 flex flex-col'>
       <Navbar user={user} onLogout={onLogout} />
       
-      <div className='flex flex-1'>
+      <div className=' flex-1'>
         <Sidebar user={user} tasks={tasks} />
         
         <div className='mt-10 sm:mt-0 flex-1 ml-0 sm:ml-16 md:ml-64 p-3 sm:p-4 md:p-6 transition-all duration-300'>

@@ -113,10 +113,10 @@ const ManageUsers = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
+    <div className="max-w-4xl mx-auto p-3 sm:p-6">
       <ToastContainer position="top-center" autoClose={3000} />
       <div className="flex items-center justify-between mb-8">
-        <h1 className="text-3xl font-bold text-purple-700 flex items-center gap-2">
+        <h1 className="text-xl sm:text-2xl font-bold flex items-center gap-2">
           <User className="w-8 h-8" /> User Management
         </h1>
         <div className="text-sm text-gray-600">
@@ -230,7 +230,7 @@ const ManageUsers = () => {
                     </div>
                     <div>
                       <p className="font-medium text-gray-900">{user.name}</p>
-                      <p className="text-sm text-gray-600">{user.email}</p>
+                      <p className="text-xs md:text-sm text-gray-600">{user.email}</p>
                       <span className={`inline-block mt-1 px-2 py-1 text-xs rounded-full ${
                         user.role === 'admin' 
                           ? 'bg-purple-100 text-purple-800' 

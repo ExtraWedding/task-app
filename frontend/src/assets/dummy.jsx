@@ -11,40 +11,7 @@ import {
     Calendar,
 } from "lucide-react"
 
-// BACKEND TEST 
-// DUMMY DATA
-const backendDummy = [
-    {
-        title: "Buy groceries",
-        description: "Milk, bread, eggs, and spinach",
-        priority: "Low",
-        dueDate: "2025-05-02T18:00:00.000Z",
-        completed: "No"
-    },
-    {
-        "title": "Book dentist appointment",
-        "description": "Routine check-up and cleaning",
-        "priority": "Medium",
-        "dueDate": "2025-05-10T10:00:00.000Z",
-        "completed": true
-    },
-    {
-        "title": "Book dentist appointment",
-        "description": "Routine check-up and cleaning",
-        "priority": "Medium",
-        "dueDate": "2025-05-10T10:00:00.000Z",
-        "completed": true
-    },
-    {
-        "title": "Pay utility bills",
-        "description": "Electricity and water bills for April",
-        "priority": "High",
-        "dueDate": "2025-04-28T12:00:00.000Z",
-        "completed": "Yes"
-    }
-];
 
-// FRONTEND DUMMY DATA
 
 // assets/formConstants.js
 export const baseControlClasses =
@@ -104,7 +71,7 @@ export const menuItems = [
 
 export const SIDEBAR_CLASSES = {
     desktop: "hidden md:flex flex-col fixed h-full w-20 lg:w-64 bg-white/90 backdrop-blur-sm border-r border-purple-100 shadow-sm z-20 transition-all duration-300",
-    mobileButton: "absolute md:hidden top-25 left-5 z-50 bg-purple-600 text-white p-2 rounded-full shadow-lg hover:bg-purple-700 transition",
+    mobileButton: "absolute md:hidden top-25 left-5 bg-purple-600 text-white p-2 rounded-full shadow-lg hover:bg-purple-700 transition",
     mobileDrawerBackdrop: "fixed inset-0 bg-black/40 backdrop-blur-sm",
     mobileDrawer: "absolute top-0 left-0 w-64 h-full bg-white/90 backdrop-blur-md border-r border-purple-100 shadow-lg z-50 p-4 flex flex-col space-y-6",
 }
@@ -172,7 +139,7 @@ export const WRAPPER = "p-4 md:p-6 min-h-screen overflow-hidden"
 export const HEADER = "flex flex-col md:flex-row justify-between items-start md:items-center mb-4 md:mb-6 gap-3"
 export const ADD_BUTTON =
     "flex items-center gap-2 bg-gradient-to-r from-fuchsia-500 to-purple-600 text-white px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 w-full md:w-auto justify-center text-sm md:text-base"
-export const STATS_GRID = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-4 md:mb-6"
+export const STATS_GRID = "grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-4 md:mb-6"
 export const STAT_CARD =
     "p-3 md:p-4 rounded-xl bg-white shadow-sm border border-purple-100 hover:shadow-md transition-all duration-300 min-w-0"
 export const ICON_WRAPPER = "p-1.5 md:p-2 rounded-lg"
