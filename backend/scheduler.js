@@ -24,7 +24,7 @@ function getDateRange(daysAhead) {
   return { start, end };
 }
 
-cron.schedule("0 8 * * *", async () => {
+cron.schedule("0 6 * * *", async () => {
   console.log("⏰ Scheduler running for H-3, H-2, H-1 reminders...");
 
   const labels = { 3: "H-3", 2: "H-2", 1: "H-1" };
