@@ -36,7 +36,7 @@ function getDateRange(daysAhead) {
   return { start, end };
 }
 
-cron.schedule("* * * * *", async () => {
+cron.schedule("0 6 * * *", async () => {
   console.log("⏰ Scheduler triggered at", new Date().toLocaleString("id-ID", { timeZone: "Asia/Jakarta" }));
   console.log("⏰ Scheduler running for H-3, H-2, H-1 reminders...");
 
