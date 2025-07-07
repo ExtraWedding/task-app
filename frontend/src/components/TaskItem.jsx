@@ -77,7 +77,7 @@ const TaskItem = ({ task, onRefresh, showCompleteCheckbox = true, onLogout}) => 
 
   return (
     <>
-      <div id='UBAH' className={`${TI_CLASSES.wrapper} ${borderColor}`}>
+      <div className={`${TI_CLASSES.wrapper} ${borderColor}`}>
         <div className={TI_CLASSES.leftContainer}>
           {showCompleteCheckbox && (
             <button onClick={handleComplete}  className={`${TI_CLASSES.completeBtn} ${isCompleted ? 'text-green-500' : 'text-gray-300'}`}>

@@ -239,7 +239,7 @@ export const MENU_OPTIONS = [
 // CSS class groups for TaskItem
 export const TI_CLASSES = {
     wrapper: "group p-4 sm:p-5 rounded-xl shadow-sm bg-white border-l-4 hover:shadow-md transition-all duration-300 border border-purple-100",
-    leftContainer: "flex items-start gap-2 sm:gap-3 flex-1 min-w-0",
+    leftContainer: "flex items-start gap-2 sm:gap-3 flex-1 min-w-0 max-w-lg",
     completeBtn: "mt-0.5 sm:mt-1 p-1 sm:p-1.5 rounded-full hover:bg-purple-100 transition-colors duration-300",
     checkboxIconBase: "w-4 h-4 sm:w-5 sm:h-5",
     titleBase: "text-base sm:text-lg font-medium truncate",

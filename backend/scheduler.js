@@ -1,3 +1,8 @@
+// cronScheduler.js
+
+import dotenv from "dotenv";
+dotenv.config();
+
 import cron from "node-cron";
 import nodemailer from "nodemailer";
 import Task from "./models/taskModel.js";
@@ -12,6 +17,13 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+transporter.verify((error, success) => {
+  if (error) {
+    console.error("❌ Transporter verification failed:", error);
+  } else {
+    console.log("✅ Transporter is ready to send emails");
+  }
+});
 
 function getDateRange(daysAhead) {
   const start = new Date();
@@ -24,7 +36,8 @@ function getDateRange(daysAhead) {
   return { start, end };
 }
 
-cron.schedule("0 6 * * *", async () => {
+cron.schedule("* * * * *", async () => {
+  console.log("⏰ Scheduler triggered at", new Date().toLocaleString("id-ID", { timeZone: "Asia/Jakarta" }));
   console.log("⏰ Scheduler running for H-3, H-2, H-1 reminders...");
 
   const labels = { 3: "H-3", 2: "H-2", 1: "H-1" };
@@ -35,11 +48,18 @@ cron.schedule("0 6 * * *", async () => {
     try {
       const tasks = await Task.find({
         dueDate: { $gte: start, $lt: end },
-        completed: false 
+        completed: false
       }).populate("owner");
 
+      if (tasks.length === 0) {
+        console.log(`ℹ️ No tasks found for ${labels[daysAhead]}`);
+      }
+
       for (const task of tasks) {
-        if (!task.owner || !task.owner.email) continue; 
+        if (!task.owner || !task.owner.email) {
+          console.log(`⚠️ Skipping task "${task.title}" because owner or email is missing.`);
+          continue;
+        }
 
         const mailOptions = {
           from: process.env.EMAIL_USER,
@@ -54,14 +74,22 @@ Kalau butuh istirahat, jangan lupa rehat sejenak ya, tapi jangan lupa kembali me
 
 Semangat selalu,
 Task-Manager-App 🌷
-          `
-          };
+          `};
 
-        await transporter.sendMail(mailOptions);
-        console.log(`✅ Reminder ${labels[daysAhead]} sent to ${task.owner.email} for task "${task.title}"`);
+        try {
+          await transporter.sendMail(mailOptions);
+          console.log(`✅ Reminder ${labels[daysAhead]} sent to ${task.owner.email} for task "${task.title}"`);
+        } catch (sendError) {
+          console.error(`❌ Failed to send reminder to ${task.owner.email} for task "${task.title}":`, sendError);
+        }
       }
     } catch (error) {
-      console.error(`❌ Error sending ${labels[daysAhead]} reminders:`, error);
+      console.error(`❌ Error processing reminders for ${labels[daysAhead]}:`, error);
     }
   }
+}, {
+  timezone: "Asia/Jakarta"
 });
+
+console.log("📅 Task Reminder Scheduler is ACTIVE and waiting for 06:00 Asia/Jakarta daily to send reminders.");
+
